@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulario Hoteles</title>
+    
+  <script>
+  
+   function validar() {
+        let nombre = document.getElementById('nombre').value;
+        let ubicacion = document.getElementById('ubicacion').value;
+        let disponibilidad = document.getElementById('disponibilidad').value;
+        let tarifa_noche = document.getElementById('tarifa_noche').value;
+        
+        if (nombre === '' || ubicacion === '' || disponibilidad === '' || tarifa_noche=== '') {
+            alert('Por favor completa todos los campos');
+            return false;
+        }
+        return true;
+    }
+</script>
+</head>
+<body>
+
+        <form action="procesar_hotel.php" method="post">
+           <h2>Registrar Hotel</h2>
+           <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br>
+            <label for="ubicacion">Ubicación:</label>
+            <input type="text" id="ubicacion" name="ubicacion" required><br>
+            <label for="disponibilidad">Disponibilidad:</label>
+            <input type="date" id="disponibilidad" name="disponibilidad" required><br>
+            <label for="tarifa_noche">Tarifa Noche:</label>
+            <input type="text" id="tarifa_noche" name="tarifa_noche" required><br><br> 
+
+            <input type="submit" value="Registrar Hotel">
+        </form>
+    
+</body>
+</html>
